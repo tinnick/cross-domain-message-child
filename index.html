@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cross Domain Message Child</title>
-    <script>
-        window.parent.postMessage('cross-domain-message-child', 'https://tinnick.github.io');
-    </script>
 </head>
 <body>
     <div id="cross-domain-check-status">Receiving from parent iframe... (open devTools to see if any errors)</div>
@@ -18,6 +15,8 @@
                 crossDomainCheckStatusElement.innerHTML = 'SUCCESS!! (parent > child)';
             }
         });
+
+        window.parent.postMessage('cross-domain-message-child', 'https://tinnick.github.io');
     </script>
 </body>
 </html>
