@@ -11,7 +11,7 @@
         const crossDomainCheckStatusElement = document.querySelector('#cross-domain-check-status');
 
         window.addEventListener('message', event => {
-            if (event.data.message === 'cross-domain-message-parent') {
+            if (event.data === 'cross-domain-message-parent') {
                 crossDomainCheckStatusElement.innerHTML = 'SUCCESS!! (parent > child)';
             }
         });
